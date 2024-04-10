@@ -13,6 +13,9 @@ module.exports = {
     addToCartButton: {
         button: '#content > div > shop-button > button'
     },
+    checkoutButton :{
+        button: 'div:nth-child(3) > shop-button:nth-child(2)'
+    },
   // insert your locators and methods here
 
   goToWebsite() {
@@ -67,7 +70,26 @@ module.exports = {
     I.seeElement('shop-cart-modal');
     I.seeElement('#viewCartAnchor');
     I.seeElement('div:nth-child(3) > shop-button:nth-child(2) > a')
-  }
+  },
 
+
+  //PP-25
+  verifyViewcartOption() {
+    I.click('div:nth-child(3) > shop-button:nth-child(1)');
+    I.seeInCurrentUrl('/cart');
+  },
+  clickCheckoutButton() {
+    I.wait(5);
+    I.click ('div > div:nth-child(2) > div.checkout-box > shop-button');
+  },
+  verifyCheckoutPage () {
+    I.seeInCurrentUrl('/checkout')
+    I.seeElement('#checkoutForm > form')
+  },
+
+  //PP-26
+    clickCheckoutOption () {
+      I.click (this.checkoutButton.button)
+    }
 };
 

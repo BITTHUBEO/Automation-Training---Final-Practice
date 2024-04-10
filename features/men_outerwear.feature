@@ -19,7 +19,22 @@ Feature: Men's Outerwear Page
    Scenario: Verify adding products to the cart in Men's Outerwear category
     When User selects the quantity of the product to purchase.
     And User selects the size of product
-    And User clicks on the "Add to Cart" button.
+    And User clicks on the Add to Cart button.
     Then Confirmation dialog box displayed to notify that the product has been "Added to cart", with 2 options "view cart" and "checkout" for the user to perform the next action of shopping
     
+  @PP-25
+    Scenario: Verify proceed to checkout after adding products from the Men's Outerwear category page and view the products in the cart
+    When The user clicks on the View Cart button in the notification popup
+    And Click the Checkout button to proceed with the checkout process
+    Then Users will be redirected to the payment page with an order information form to complete the purchasing process.
+      
+  @PP-26
+    Scenario: Verify proceed to direct checkout after adding a product from the Men's Outerwear category
+    When The user clicks on the Checkout button in the notification popup
+    Then Users will be redirected to the checkout page with an order information form to complete the purchasing process.
+  
 
+  @PP-111
+    Scenario: Verify Display Product Information in Checkout Form for Direct Checkout
+    When Verify the product name before adding product to cart
+    Then The checkout form displays only the information about the product being purchased.
