@@ -31,7 +31,7 @@ Feature: Men's Outerwear Page
   @PP-26
     Scenario: Verify proceed to direct checkout after adding a product from the Men's Outerwear category
     When The user clicks on the Checkout button in the notification popup
-    Then Users will be redirected to the checkout page with an order information form to complete the purchasing process.
+    Then The product just added to cart is displayed on the order summary section of the checkout form
   
 
   @PP-111
