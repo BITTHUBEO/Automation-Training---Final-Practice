@@ -1,10 +1,15 @@
 Feature: Checkout Page
 
   Background:
-    Given I open Men's Outerwear Page
+    Given I access the website
+
+  @PP-33
+  Scenario: Verify that user can Checkout after Editing Cart Contents
+    When User accesses the website and clicks on the cart icon to view the products in the cart.
+    And User reviews the products in the cart and decides to edit the items by changing quantities or removing products.
+    Then Verify the product information displayed in the checkout form accurately reflects the modifications made by the user in the cart.
 
   @PP-34
-  Scenario: Verify that user can Checkout after Editing Cart Contents
-    When User verifies the information for each product
-    Then The total number of products on the page is displayed
-    And All products displayed on the page include image, product names and prices
+    Scenario: Verify the website display clear notification if cart is empty
+    When User views their cart by clicking the cart icon
+    Then Then A clear notification about the empty cart should be displayed

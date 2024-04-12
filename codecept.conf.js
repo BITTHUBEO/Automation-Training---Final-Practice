@@ -9,7 +9,9 @@ exports.config = {
   },
   include: {
     I: './steps_file.js',
-    menOuterwearPage: "./page_object/men_outerwear.js",
+    menOuterwearPage: "./page_object/men_outerwear.js", 
+    checkoutPage: "./page_object/checkout.js",
+    checkoutForm: "./page_object/checkoutForm.js"
   },
   mocha: {},
   bootstrap: null,
@@ -18,7 +20,7 @@ exports.config = {
   hooks: [],
   gherkin: {
     features: './features/*.feature',
-    steps: ['./step_definitions/men_outerwear.js','./step_definitions/checkout.js']
+    steps: ['./step_definitions/men_outerwear.js','./step_definitions/checkoutPage.js','./step_definitions/checkoutForm.js']
   },
   plugins: {
     screenshotOnFail: {
