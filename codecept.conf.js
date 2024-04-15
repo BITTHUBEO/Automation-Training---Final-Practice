@@ -38,5 +38,15 @@ exports.config = {
     }
   ],
   tests: './*_test.js',
-  name: 'Polymer-FinalPractice'
+  name: 'Polymer-FinalPractice',
+  plugins: {
+    qase: {
+      require: "codeceptjs-qase",
+      apiKey: "e0922330af51acc5cf4aa9ec0e692ace901409996e988d4d6fa7cc7275a33987",
+      projectName: "PP", //process.env.QASE_PROJECT_NAME,
+      enabled: true, //process.env.QASE_REPORT || false,
+      // runId: process.env.TEST_RUN_ID,
+      // testRunTags: ['smoke-tests']
+    }
+  }
 }

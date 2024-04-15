@@ -3,7 +3,7 @@ Feature: Checkout Page
   Background:
     Given I access the website
 
-  @PP-33
+  @C35
   Scenario: Verify that user can Checkout after Editing Cart Contents
     When User accesses the website and clicks on the cart icon to view the products in the cart.
     And User reviews the products in the cart and decides to edit the items by changing quantities or removing products.
