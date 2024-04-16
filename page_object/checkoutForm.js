@@ -17,8 +17,6 @@ module.exports = {
   //PP-35
   errorMessageAccInfo() {
     I.seeElement('shop-md-decorator[error-message="Invalid Address"] label');   
-    I.seeElement('shop-md-decorator[error-message="Invalid City"] label');  
-    I.seeElement('shop-md-decorator[error-message="Invalid State/Province"] label');  
     I.seeElement('shop-md-decorator[error-message="Invalid Zip/Postal Code"] label');  
     I.seeElement('shop-md-decorator[error-message="Invalid Cardholder Name"] label');  
     I.seeElement('shop-md-decorator[error-message="Invalid Card Number"] label');  
@@ -30,7 +28,15 @@ module.exports = {
   phoneErrorMessage () {
     I.seeElement('shop-md-decorator[error-message="Invalid Phone Number"] label');   
   },
-
+ cityErrorMessage () {
+    I.seeElement('shop-md-decorator[error-message="Invalid City"] label');  
+  },
+  shipStateErrorMessage () {
+    I.seeElement('shop-md-decorator[error-message="Invalid State/Province"] label');  
+  },
+  shipZipErrorMessage () {
+    I.seeElement('shop-md-decorator[error-message="Invalid Zip/Postal Code"] label');  
+  },
   //PP-80
   billingErrorMessage(){
     I.seeNumberOfVisibleElements('shop-md-decorator[error-message="Invalid Address"] label', 2);
@@ -56,4 +62,5 @@ module.exports = {
     I.fillField('#ccNumber', '085547982022365');
     I.fillField('#ccCVV', '1234');
   }
+
 }
