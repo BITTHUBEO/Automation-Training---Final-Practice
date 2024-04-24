@@ -22,8 +22,9 @@ Given('I access the checkout form Page', () => {
         checkoutForm.cityErrorMessage ();
         checkoutForm.shipStateErrorMessage ();
         checkoutForm.shipZipErrorMessage();
+        checkoutForm.cardholderNameErrorMessage();
+        checkoutForm.cardNumberErrorMessage();
         checkoutForm.errorMessageAccInfo();
-        
       });
 
     //PP-80
@@ -116,4 +117,51 @@ Given('I access the checkout form Page', () => {
       I.click('#submitBox');
       checkoutForm.shipZipErrorMessage();      
     });
+
+    //PP-61
+    When('Check if any country is pre-selected.', () => {
+
+      });
+    Then('The system should display the default country as United States.', () => {
+     I.seeElement( 'United States', '#shipCountry')
+      });
+    //PP-64
+    When('Enter {string} special characters or numbers into the Cardholder Name field.', (cardholdername) => {
+      I.fillField('#ccName', cardholdername);
+      });
+    Then('An error message Invalid Cardholder Name is displayed', () => {
+      I.click('#submitBox');
+      I.wait(5)
+      I.seeElement('Invalid Cardholder Name','shop-md-decorator[error-message="Invalid Cardholder Name"]')    
+    });
+     //PP-71
+    When('Enter a {string} within the allowed limit digits but containing spaces into the Card Number field.', (cardnumber) => {
+      I.fillField('#ccNumber', cardnumber);
+      });
+    Then('The error message Invalid Card Number displayed', () => {
+      I.click('#submitBox');
+      I.wait(5)
+      checkoutForm.cardNumberErrorMessage();      
+    });
+     //PP-73
+    When('Enter {string} with special characters or letters into the CVV field.', (cvv) => {
+      I.fillField('#ccCVV', cvv);
+      });
+    Then('The error message Invalid CVV is displayed', () => {
+      I.click('#submitBox');
+      I.wait(5)
+      checkoutForm.cvvErrorMessage();      
+    });
+
+    //PP-78
+    When('Select an expiry date that has already passed from the dropdown.', () => {
+      I.selectOption('#ccExpMonth','Jan');
+      I.selectOption('#ccExpYear','2017');
+      });
+    Then('An error message Invalid Expiry is displayed', () => {
+      I.click('#submitBox');
+      I.wait(5)
+      I.see('Invalid Expiry Year','#ccExpYear')   
+    });
+
 

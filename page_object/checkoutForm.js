@@ -18,8 +18,6 @@ module.exports = {
   errorMessageAccInfo() {
     I.seeElement('shop-md-decorator[error-message="Invalid Address"] label');   
     I.seeElement('shop-md-decorator[error-message="Invalid Zip/Postal Code"] label');  
-    I.seeElement('shop-md-decorator[error-message="Invalid Cardholder Name"] label');  
-    I.seeElement('shop-md-decorator[error-message="Invalid Card Number"] label');  
     I.seeElement('shop-md-decorator[error-message="Invalid CVV"] label');   
   },
   emailErrorMessage () {
@@ -36,6 +34,18 @@ module.exports = {
   },
   shipZipErrorMessage () {
     I.seeElement('shop-md-decorator[error-message="Invalid Zip/Postal Code"] label');  
+  },
+  cardholderNameErrorMessage () {
+    I.seeElement('shop-md-decorator[error-message="Invalid Cardholder Name"] label');
+  },
+  cardNumberErrorMessage () {
+    I.see('Invalid Card Number', '#checkoutForm > form > div.subsection.grid > section:nth-child(2) > div:nth-child(3) > shop-input > shop-md-decorator')      
+  },
+  cvvErrorMessage () {
+    I.see('Invalid CVV', '#checkoutForm > form > div.subsection.grid > section:nth-child(2) > div:nth-child(4) > shop-input > shop-md-decorator')      
+  },
+  expErrorMessage () {
+    I.see('Invalid Expiry', '#checkoutForm > form > div.subsection.grid > section:nth-child(2) > div:nth-child(4')      
   },
   //PP-80
   billingErrorMessage(){

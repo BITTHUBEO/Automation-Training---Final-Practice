@@ -3,7 +3,7 @@ Feature: Checkout Form Page
   Background:
     Given I access the checkout form Page
 
-  @C35
+  @PP-35
   Scenario: Verify empty mandatory fields handling on Checkout Form submission
     When  Click on the Place Order button
     Then The system displays error messages corresponding to each required field in the checkout form
@@ -75,3 +75,39 @@ Feature: Checkout Form Page
       |    123           |      
       |    12            |  
       |     2            |  
+
+    @PP-61
+    Scenario: Verify Default Selection of Country
+    When Check if any country is pre-selected.
+    Then The system should display the default country as United States.
+
+    @PP-64
+    Scenario Outline: Verify Input of Special Characters and Numbers in Cardholder Name Field
+    When Enter '<cardholdername>' special characters or numbers into the Cardholder Name field.
+    Then An error message Invalid Cardholder Name is displayed 
+    Examples:
+      |  cardholdername | 
+      |    !@#%&^        |      
+      |    1242          |  
+      |    1341!@$%$     |  
+
+    @PP-71
+    Scenario Outline: Verify Input of Card Number with Spaces within Length Limit
+    When Enter a '<cardnumber>' within the allowed limit digits but containing spaces into the Card Number field.
+    Then The error message Invalid Card Number displayed 
+    Examples:
+      |  cardnumber     | 
+      | 1234 5678 93211 |      
+
+    @PP-73
+    Scenario Outline: Verify Input of Special Characters or Letters in CVV Field
+    When Enter '<cvv>' with special characters or letters into the CVV field.
+    Then The error message Invalid CVV is displayed 
+    Examples:
+      |  cvv     | 
+      | @!^%     |      
+      | onetwo   |  
+  @PP-78
+    Scenario: Verify Selection of Expired Expiry Date
+    When Select an expiry date that has already passed from the dropdown.
+    Then An error message Invalid Expiry is displayed 
