@@ -42,6 +42,7 @@ Feature: Checkout Form Page
       |   phonenumber    | 
       |  0466eewer15516  |      
       |  554!@$%*%#      |  
+      |                  |
 
     @C49
     Scenario Outline: Verify Input of Combination of Alphanumeric Characters in Address Field
@@ -59,7 +60,7 @@ Feature: Checkout Form Page
     @PP-55
     Scenario Outline: Verify Input of Special Characters and Numeric Characters in State/Province Field
     When Enter '<statename>' special characters and numeric characters into the field.
-    Then An error message Invalid State/Province is displayed.
+    Then An error message Invalid State Province is displayed.
     Examples:
       |   statename        | 
       |     !@#$%          | 
@@ -68,8 +69,8 @@ Feature: Checkout Form Page
     
     @PP-109
     Scenario Outline: Verify Input Zip/Postal Code Below Character Limit in Shipping
-    When Enter a <code> with a length below the required limit into the Zip/Postal Code field
-    Then An error message Invalid Zip/Postal Code is displayed
+    When Enter a <code> with a length below the required limit into the Zip Postal Code field
+    Then An error message Invalid Zip Postal Code is displayed
     Examples:
       |   code           | 
       |    123           |      

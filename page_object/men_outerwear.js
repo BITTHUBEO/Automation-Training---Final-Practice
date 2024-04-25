@@ -52,7 +52,8 @@ module.exports = {
     I.seeElement('.description');
     I.seeElement(this.addToCartButton.button)
   },
-  
+
+
 
   //PP-21
   /*selectQuantity() {

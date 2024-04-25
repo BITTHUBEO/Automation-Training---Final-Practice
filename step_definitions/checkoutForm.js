@@ -102,20 +102,21 @@ Given('I access the checkout form Page', () => {
     When('Enter {string} special characters and numeric characters into the field.', (statename) => {
         I.click('#submitBox');
         I.fillField('#shipState', statename);
-        I.wait(5)
         });
-    Then('An error message Invalid State/Province is displayed.', () => {
+    Then('An error message Invalid State Province is displayed.', () => {
         I.click('#submitBox');
-        checkoutForm.shipStateErrorMessage ();
+        I.wait(5);
+        I.see('Invalid State/Province')
         });
     //PP-109
-    When('Enter a {int} with a length below the required limit into the Zip/Postal Code field', (code) => {
+    When('Enter a {int} with a length below the required limit into the Zip Postal Code field', (code) => {
       I.click('#submitBox');
       I.fillField('#shipZip', code);
       });
-    Then('An error message Invalid Zip/Postal Code is displayed', () => {
+    Then('An error message Invalid Zip Postal Code is displayed', () => {
       I.click('#submitBox');
-      checkoutForm.shipZipErrorMessage();      
+      I.see('Invalid Zip/Postal Code') 
+      I.wait(5)     
     });
 
     //PP-61
@@ -123,7 +124,7 @@ Given('I access the checkout form Page', () => {
 
       });
     Then('The system should display the default country as United States.', () => {
-     I.seeElement( 'United States', '#shipCountry')
+      I.see('United States', '#shipCountry option[selected]')
       });
     //PP-64
     When('Enter {string} special characters or numbers into the Cardholder Name field.', (cardholdername) => {
@@ -132,7 +133,7 @@ Given('I access the checkout form Page', () => {
     Then('An error message Invalid Cardholder Name is displayed', () => {
       I.click('#submitBox');
       I.wait(5)
-      I.seeElement('Invalid Cardholder Name','shop-md-decorator[error-message="Invalid Cardholder Name"]')    
+      I.seeElement('shop-md-decorator[error-message="Invalid Cardholder Name"]')    
     });
      //PP-71
     When('Enter a {string} within the allowed limit digits but containing spaces into the Card Number field.', (cardnumber) => {

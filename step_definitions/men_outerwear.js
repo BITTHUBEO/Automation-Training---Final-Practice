@@ -109,9 +109,6 @@ Then('The product detail page should include product name, description, price, s
     assert.strictEqual(productPrice * productQuantity, checkoutProductPrice, 'Price does not match')
   });
 
-  //PP-111
-
-
   
   
   
