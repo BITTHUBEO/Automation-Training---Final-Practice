@@ -27,17 +27,7 @@ Given('I access the checkout form Page', () => {
         checkoutForm.errorMessageAccInfo();
       });
 
-    //PP-80
-    When('Select the option "Use Different Billing Address" in the checkbox', () => {
-        I.click('#setBilling')
-      });
-    When('Click on Place order button', () => {
-        I.click('#submitBox')
-      });
-    Then('The error messages of billing address are displayed due to these fields are required', () => {
-        I.wait(10)
-        checkoutForm.billingErrorMessage()
-      });
+
 
     //PP-98
     When('Fill in all required and valid information in the checkout form.', () => {
@@ -133,7 +123,7 @@ Given('I access the checkout form Page', () => {
     Then('An error message Invalid Cardholder Name is displayed', () => {
       I.click('#submitBox');
       I.wait(5)
-      I.seeElement('shop-md-decorator[error-message="Invalid Cardholder Name"]')    
+      I.seeCssPropertiesOnElements('shop-input > input[aria-invalid="true"]:not(:valid) + shop-md-decorator::after', {'display': 'block'});
     });
      //PP-71
     When('Enter a {string} within the allowed limit digits but containing spaces into the Card Number field.', (cardnumber) => {

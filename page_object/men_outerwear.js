@@ -7,9 +7,6 @@ module.exports = {
     productList: {
         xPath: '//html/body/shop-app//iron-pages/shop-list//ul/li[${i}]/a/shop-list-item'
     },
-    detailProductPage :{
-        link: 'https://shop.polymer-project.org/detail/mens_outerwear/Men+s+Tech+Shell+Full-Zip'
-    },
     addToCartButton: {
         button: '#content > div > shop-button > button'
     },
@@ -21,9 +18,7 @@ module.exports = {
   goToWebsite() {
     I.amOnPage(this.menOuterwearPage.url)
   },
-  goToDetailProductPage() {
-    I.amOnPage(this.detailProductPage.link)
-  },
+
 
   async getNumberOfProduct() {
     return await I.grabNumberOfVisibleElements('this.productList.xPath');
@@ -43,7 +38,9 @@ module.exports = {
 //PP-17
   clickOnProduct() {
     I.wait(10);
-    I.click('ul > li:nth-child(1) > a')
+    const randomIndex = Math.floor(Math.random()*16)+1;    
+    console.log('randomIndex', randomIndex);
+    I.click(`ul > li:nth-child(${randomIndex})`);
   },
   verifyProductDetailPage() {
     I.seeElement('h1');

@@ -11,7 +11,8 @@ exports.config = {
     I: './steps_file.js',
     menOuterwearPage: "./page_object/men_outerwear.js", 
     checkoutPage: "./page_object/checkout.js",
-    checkoutForm: "./page_object/checkoutForm.js"
+    checkoutForm: "./page_object/checkout-form/checkoutForm.js",
+    checkoutFormPP80: "./page_object/checkout-form/checkout-form-PP-80.js",
   },
   mocha: {},
   bootstrap: null,
@@ -20,7 +21,7 @@ exports.config = {
   hooks: [],
   gherkin: {
     features: './features/*.feature',
-    steps: ['./step_definitions/men_outerwear.js','./step_definitions/checkoutPage.js','./step_definitions/checkoutForm.js']
+    steps: ['./step_definitions/men_outerwear.js','./step_definitions/checkoutPage.js','./step_definitions/checkout-form/checkoutForm.js','./step_definitions/checkout-form/checkout-form-PP-80.js']
   },
   plugins: {
     screenshotOnFail: {

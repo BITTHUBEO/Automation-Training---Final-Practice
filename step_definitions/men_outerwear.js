@@ -55,7 +55,6 @@ Then('The product detail page should include product name, description, price, s
   let totalProductInCartString;
   When('The user clicks on the View Cart button in the notification popup', async () => {
     menOuterwearPage.clickOnProduct();
-    menOuterwearPage.goToDetailProductPage();
     menOuterwearPage.selectQuantity();
     menOuterwearPage.selectSize();
     menOuterwearPage.clickAddToCartButton();

@@ -36,10 +36,10 @@ module.exports = {
     I.seeElement('shop-md-decorator[error-message="Invalid Zip/Postal Code"] label');  
   },
   cardholderNameErrorMessage () {
-    I.seeElement('shop-md-decorator[error-message="Invalid Cardholder Name"] label');
+    I.seeCssPropertiesOnElements('#checkoutForm > form > div.subsection.grid > section:nth-child(2) > div:nth-child(2) > shop-input > shop-md-decorator', {display: block});
   },
   cardNumberErrorMessage () {
-    I.see('Invalid Card Number', '#checkoutForm > form > div.subsection.grid > section:nth-child(2) > div:nth-child(3) > shop-input > shop-md-decorator')      
+    I.seeElement('shop-md-decorator[error-message="Invalid Card Number"] label')      
   },
   cvvErrorMessage () {
     I.see('Invalid CVV', '#checkoutForm > form > div.subsection.grid > section:nth-child(2) > div:nth-child(4) > shop-input > shop-md-decorator')      
@@ -47,13 +47,7 @@ module.exports = {
   expErrorMessage () {
     I.see('Invalid Expiry', '#checkoutForm > form > div.subsection.grid > section:nth-child(2) > div:nth-child(4')      
   },
-  //PP-80
-  billingErrorMessage(){
-    I.seeNumberOfVisibleElements('shop-md-decorator[error-message="Invalid Address"] label', 2);
-    I.seeNumberOfVisibleElements('shop-md-decorator[error-message="Invalid City"] label', 2);
-    I.seeNumberOfVisibleElements('shop-md-decorator[error-message="Invalid State/Province"] label', 2);
-    I.seeNumberOfVisibleElements('shop-md-decorator[error-message="Invalid Zip/Postal Code"] label', 2);
-  },
+
 
 //PP-98
   fillAllValidInfo(){
