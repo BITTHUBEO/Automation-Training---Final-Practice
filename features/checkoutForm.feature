@@ -14,7 +14,7 @@ Feature: Checkout Form Page
     And Click on Place order button
     Then The error messages of billing address are displayed due to these fields are required
 
-  @C98
+  @PP-98
     Scenario: Verify successful Placement of Order with Valid Information
     When Fill in all required and valid information in the checkout form.
     And Click on the Place Order button.
