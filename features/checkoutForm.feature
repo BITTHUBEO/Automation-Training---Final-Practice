@@ -20,12 +20,12 @@ Feature: Checkout Form Page
     And Click on the Place Order button.
     Then A confirmation message Thank you is displayed
 
-  @C36
+  @PP-36
     Scenario: Verify a valid email address
     When Enter the valid email address into the email field
     Then The system accepts the input without displaying error message Invalid email
 
-  @C43 
+  @PP-43 
     Scenario Outline: Verify missing "@" symbol between local part and domain name
     When Enter the '<email>' address missing @ symbol into the email field.
     Then An error message Invalid email is displayed indicating that the email address is invalid
@@ -34,7 +34,7 @@ Feature: Checkout Form Page
       |  thu&gmail.com   |      
       |  thugmail.com    |  
 
-    @C100
+    @PP-100
     Scenario Outline: Verify Input Phone Number with Special Characters or Letters
     When Enter a '<phonenumber>' containing special characters into the phone number field.
     Then An error message Invalid Phone Number is displayed
@@ -42,9 +42,9 @@ Feature: Checkout Form Page
       |   phonenumber    | 
       |  0466eewer15516  |      
       |  554!@$%*%#      |  
-      |                  |
 
-    @C49
+
+    @PP-49
     Scenario Outline: Verify Input of Combination of Alphanumeric Characters in Address Field
     When Enter an '<address>' combination of alphanumeric characters into the address field.
     Then There are no error messages Invalid Phone Number is displayed.

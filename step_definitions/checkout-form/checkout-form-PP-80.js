@@ -1,21 +1,14 @@
-const { I, checkoutFormPP80 } = inject();
-const assert = require('assert');
+const { I, checkoutFormPP80, checkoutForm } = inject();
 
 Given('I access the checkout form Page', () => {
-    I.amOnPage('https://shop.polymer-project.org/')
-    I.click('div:nth-child(2) > shop-button');
-    I.wait(5);
-    I.click('ul > li:nth-child(1) > a');
-    I.click('#content > div > shop-button');
-    I.wait(10);
-    I.click('div:nth-child(3) > shop-button:nth-child(2)')
+    checkoutForm.givenStep()
     });
     //PP-80
     When('Select the option "Use Different Billing Address" in the checkbox', () => {
         I.click('#setBilling')
       });
     When('Click on Place order button', () => {
-        I.click('#submitBox')
+        checkoutForm.submitBox();
       });
     Then('The error messages of billing address are displayed due to these fields are required', () => {
         I.wait(10)

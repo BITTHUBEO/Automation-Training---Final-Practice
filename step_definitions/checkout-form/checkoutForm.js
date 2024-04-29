@@ -11,64 +11,6 @@ Given('I access the checkout form Page', () => {
     I.click('div:nth-child(3) > shop-button:nth-child(2)')
     });
 
-    //PP-35
-    When('Click on the Place Order button', () => {
-        I.click('#submitBox')
-      });
-    Then ('The system displays error messages corresponding to each required field in the checkout form', () => {
-        I.wait(10)
-        checkoutForm.emailErrorMessage ();
-        checkoutForm.phoneErrorMessage ();
-        checkoutForm.cityErrorMessage ();
-        checkoutForm.shipStateErrorMessage ();
-        checkoutForm.shipZipErrorMessage();
-        checkoutForm.cardholderNameErrorMessage();
-        checkoutForm.cardNumberErrorMessage();
-        checkoutForm.errorMessageAccInfo();
-      });
-
-
-
-    //PP-98
-    When('Fill in all required and valid information in the checkout form.', () => {
-      checkoutForm.fillAllValidInfo()
-      });
-    When('Click on the Place Order button.', () => {
-        I.click('#submitBox')
-      });
-    Then('A confirmation message Thank you is displayed', () => {
-        I.see('Thank you','h1');
-      });
-      
-    //PP-36
-    When('Enter the valid email address into the email field', () => {
-        I.click('#submitBox');
-        I.fillField('#accountEmail', 'bich@thu.com');
-        });
-    Then('The system accepts the input without displaying error message Invalid email', () => {
-        I.click('#submitBox');
-        I.dontSee('Invalid Email');        
-        });
-
-    //PP-43
-    When('Enter the {string} address missing @ symbol into the email field.', (email) => {
-        I.click('#submitBox');
-        I.fillField('#accountEmail', email);
-        });
-    Then('An error message Invalid email is displayed indicating that the email address is invalid', () => {
-        I.click('#submitBox');
-        checkoutForm.emailErrorMessage ();
-        });
-
-    //PP-100
-    When('Enter a {string} containing special characters into the phone number field.', (phonenumber) => {
-        I.click('#submitBox');
-        I.fillField('#accountPhone', phonenumber);
-        });
-    Then('An error message Invalid Phone Number is displayed', () => {
-        I.click('#submitBox');
-        checkoutForm.phoneErrorMessage ();
-        });
     //PP-49
     When('Enter an {string} combination of alphanumeric characters into the address field.', (address) => {
         I.click('#submitBox');
