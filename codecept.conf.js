@@ -22,7 +22,7 @@ exports.config = {
   hooks: [],
   gherkin: {
     features: './features/*.feature',
-    steps: ['./step_definitions/men_outerwear.js','./step_definitions/checkoutPage.js','./step_definitions/checkout-form/checkoutForm.js','./step_definitions/checkout-form/checkout-form-PP-80.js','./step_definitions/checkout-form/checkout-form-PP-98.js', './step_definitions/checkout-form/checkout-form-PP-36.js', './step_definitions/checkout-form/checkout-form-PP-43.js','./step_definitions/checkout-form/checkout-form-PP-100.js', './step_definitions/checkout-form/checkout-form-PP-35.js']
+    steps: ['./step_definitions/men_outerwear.js','./step_definitions/checkoutPage.js','./step_definitions/checkout-form/checkoutForm.js','./step_definitions/checkout-form/checkout-form-PP-80.js','./step_definitions/checkout-form/checkout-form-PP-98.js', './step_definitions/checkout-form/checkout-form-PP-36.js', './step_definitions/checkout-form/checkout-form-PP-43.js','./step_definitions/checkout-form/checkout-form-PP-100.js', './step_definitions/checkout-form/checkout-form-PP-35.js', './step_definitions/checkout-form/checkout-form-PP-52.js','./step_definitions/checkout-form/checkout-form-PP-55.js','./step_definitions/checkout-form/checkout-form-PP-100.js','./step_definitions/checkout-form/checkout-form-PP-109.js']
   },
   plugins: {
     screenshotOnFail: {

@@ -11,45 +11,6 @@ Given('I access the checkout form Page', () => {
     I.click('div:nth-child(3) > shop-button:nth-child(2)')
     });
 
-    //PP-49
-    When('Enter an {string} combination of alphanumeric characters into the address field.', (address) => {
-        I.click('#submitBox');
-        I.fillField('#shipAddress', address);
-        });
-    Then('There are no error messages Invalid Phone Number is displayed.', () => {
-        I.click('#submitBox');
-        I.dontSee('Invalid Address')
-        });
-    //PP-52
-    When('Enter city name wwith whitespace characters into the city field.', () => {
-        I.click('#submitBox');
-        I.fillField('#shipCity', '        ');
-        I.wait(5)
-        });
-    Then('An error message Invalid City is displayed', () => {
-        I.click('#submitBox');
-        checkoutForm.cityErrorMessage ();
-        });
-    //PP-55
-    When('Enter {string} special characters and numeric characters into the field.', (statename) => {
-        I.click('#submitBox');
-        I.fillField('#shipState', statename);
-        });
-    Then('An error message Invalid State Province is displayed.', () => {
-        I.click('#submitBox');
-        I.wait(5);
-        I.see('Invalid State/Province')
-        });
-    //PP-109
-    When('Enter a {int} with a length below the required limit into the Zip Postal Code field', (code) => {
-      I.click('#submitBox');
-      I.fillField('#shipZip', code);
-      });
-    Then('An error message Invalid Zip Postal Code is displayed', () => {
-      I.click('#submitBox');
-      I.see('Invalid Zip/Postal Code') 
-      I.wait(5)     
-    });
 
     //PP-61
     When('Check if any country is pre-selected.', () => {
