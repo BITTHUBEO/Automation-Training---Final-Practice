@@ -7,9 +7,6 @@ module.exports = {
     productList: {
         xPath: '//html/body/shop-app//iron-pages/shop-list//ul/li[${i}]/a/shop-list-item'
     },
-    addToCartButton: {
-        button: '#content > div > shop-button > button'
-    },
     checkoutButton :{
         button: 'div:nth-child(3) > shop-button:nth-child(2)'
     },
@@ -23,32 +20,7 @@ module.exports = {
   async getNumberOfProduct() {
     return await I.grabNumberOfVisibleElements('this.productList.xPath');
   },
-  //PP-13
-  async verifyProductInformation() {
-    const numberOfProducts = await this.getNumberOfProduct();
-    for (let i = 1; i <= numberOfProducts; i++ ) {
-      within('this.productList.xPath', () => {
-      I.seeElement('#img');
-      I.seeElement('.title');
-      I.seeElement('.price')
-    });
-  }
-},
 
-//PP-17
-  clickOnProduct() {
-    I.wait(10);
-    const randomIndex = Math.floor(Math.random()*16)+1;    
-    console.log('randomIndex', randomIndex);
-    I.click(`ul > li:nth-child(${randomIndex})`);
-  },
-  verifyProductDetailPage() {
-    I.seeElement('h1');
-    I.seeElement('#sizeLabel');
-    I.seeElement('#quantityLabel');
-    I.seeElement('.description');
-    I.seeElement(this.addToCartButton.button)
-  },
 
 
 

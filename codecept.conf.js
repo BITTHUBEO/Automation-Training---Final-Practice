@@ -9,7 +9,10 @@ exports.config = {
   },
   include: {
     I: './steps_file.js',
-    menOuterwearPage: "./page_object/men_outerwear.js", 
+    menOuterwearPage: "./page_object/men-outerwear/men_outerwear.js", 
+    menOuterwearPagePP13: "./page_object/men-outerwear/men-outerwear-PP-13.js", 
+    menOuterwearPagePP17: "./page_object/men-outerwear/men-outerwear-PP-17.js", 
+    menOuterwearPagePP21: "./page_object/men-outerwear/men-outerwear-PP-21.js", 
     checkoutPage: "./page_object/checkout.js",
     checkoutForm: "./page_object/checkout-form/checkoutForm.js",
     checkoutFormPP80: "./page_object/checkout-form/checkout-form-PP-80.js",
@@ -22,7 +25,7 @@ exports.config = {
   hooks: [],
   gherkin: {
     features: './features/*.feature',
-    steps: ['./step_definitions/men_outerwear.js','./step_definitions/checkout-page/checkout-page-PP-34.js','./step_definitions/checkout-form/checkout-form-PP-80.js','./step_definitions/checkout-form/checkout-form-PP-98.js', './step_definitions/checkout-form/checkout-form-PP-36.js', './step_definitions/checkout-form/checkout-form-PP-43.js','./step_definitions/checkout-form/checkout-form-PP-100.js', './step_definitions/checkout-form/checkout-form-PP-35.js', './step_definitions/checkout-form/checkout-form-PP-52.js','./step_definitions/checkout-form/checkout-form-PP-55.js','./step_definitions/checkout-form/checkout-form-PP-100.js','./step_definitions/checkout-form/checkout-form-PP-109.js','./step_definitions/checkout-form/checkout-form-PP-61.js','./step_definitions/checkout-form/checkout-form-PP-64.js','./step_definitions/checkout-form/checkout-form-PP-71.js','./step_definitions/checkout-form/checkout-form-PP-73.js','./step_definitions/checkout-form/checkout-form-PP-78.js', './step_definitions/checkout-page/checkout-page-PP-33.js']
+    steps: ['./step_definitions/men-outerwear/men_outerwear.js','./step_definitions/checkout-page/checkout-page-PP-34.js','./step_definitions/checkout-form/checkout-form-PP-80.js','./step_definitions/checkout-form/checkout-form-PP-98.js', './step_definitions/checkout-form/checkout-form-PP-36.js', './step_definitions/checkout-form/checkout-form-PP-43.js','./step_definitions/checkout-form/checkout-form-PP-100.js', './step_definitions/checkout-form/checkout-form-PP-35.js', './step_definitions/checkout-form/checkout-form-PP-52.js','./step_definitions/checkout-form/checkout-form-PP-55.js','./step_definitions/checkout-form/checkout-form-PP-100.js','./step_definitions/checkout-form/checkout-form-PP-109.js','./step_definitions/checkout-form/checkout-form-PP-61.js','./step_definitions/checkout-form/checkout-form-PP-64.js','./step_definitions/checkout-form/checkout-form-PP-71.js','./step_definitions/checkout-form/checkout-form-PP-73.js','./step_definitions/checkout-form/checkout-form-PP-78.js', './step_definitions/checkout-page/checkout-page-PP-33.js','./step_definitions/men-outerwear/men-outerwear-PP-13.js','./step_definitions/men-outerwear/men-outerwear-PP-17.js','./step_definitions/men-outerwear/men-outerwear-PP-21.js']
   },
   plugins: {
     screenshotOnFail: {

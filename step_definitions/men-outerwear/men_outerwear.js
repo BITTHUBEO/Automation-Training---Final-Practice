@@ -1,4 +1,4 @@
-const { I, menOuterwearPage  } = inject();
+const { I, menOuterwearPage, menOuterwearPagePP13 } = inject();
 const assert = require('assert');
 
 
@@ -6,27 +6,6 @@ Given('I open Men\'s Outerwear Page', () => {
   menOuterwearPage.goToWebsite();
   });
   
-  //PP-13
-When('User verifies the information for each product', () => {
-  });
-Then('The total number of products on the page is displayed', () => {
-  I.see('(16 items)', 'span');
-  });
-Then ('All products displayed on the page include image, product names and prices', async () => {
-  menOuterwearPage.getNumberOfProduct();
-  menOuterwearPage.verifyProductInformation();
-  });
-
-  //PP-17
-When('User clicks on the product to view its details',  () => {
-  menOuterwearPage.clickOnProduct();
-})
-Then('The product detail page should include product name, description, price, size, quantity, and buttons to add the product to the cart', () => {
-  I.wait(10);
-  menOuterwearPage.goToDetailProductPage();
-  menOuterwearPage.verifyProductDetailPage();
-});
-
 
   //PP-21
   When('User selects the quantity of the product to purchase.', async () => {
