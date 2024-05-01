@@ -1,6 +1,9 @@
 const { I } = inject();
 
 module.exports = {
+    addToCartButton: {
+        button: '#content > div > shop-button > button'
+    },
     // insert your locators and methods here
     async getNumberOfProduct() {
         return await I.grabNumberOfVisibleElements('this.productList.xPath');

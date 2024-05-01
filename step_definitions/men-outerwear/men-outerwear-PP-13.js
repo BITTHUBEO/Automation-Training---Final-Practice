@@ -1,8 +1,8 @@
-const { I, menOuterwearPage, menOuterwearPagePP13 } = inject();
+const { I,  menOuterwearPagePP13 } = inject();
 
 
 Given('I open Men\'s Outerwear Page', () => {
-    menOuterwearPage.goToWebsite();
+    menOuterwearPagePP13.goToWebsite();
 });
 
 //PP-13

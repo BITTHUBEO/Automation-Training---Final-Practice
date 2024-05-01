@@ -1,4 +1,4 @@
-const { I, menOuterwearPage, checkoutPage } = inject();
+const { I, menOuterwearPagePP25, checkoutPage, menOuterwearPagePP21 } = inject();
 const assert = require('assert');
 
 Given('I access the website', () => {
@@ -19,12 +19,12 @@ When('User reviews the products in the cart and decides to edit the items by cha
     I.wait(5);
     I.click('div > div.detail > paper-icon-button');
     I.wait(5)
-    menOuterwearPage.selectQuantity();
+    menOuterwearPagePP21.selectQuantity();
     I.wait(15)
     totalProductInCart = await I.grabNumberOfVisibleElements('.name');
     totalProductInCartString = totalProductInCart.toString();
     totalPriceInCart = await I.grabTextFrom('.subtotal');
-    menOuterwearPage.clickCheckoutOption();
+    menOuterwearPagePP25.clickCheckoutOption();
 });
 Then('Verify the product information displayed in the checkout form accurately reflects the modifications made by the user in the cart.', async () => {
     totalProductInCheckout = await I.grabNumberOfVisibleElements('.flex');

@@ -1,7 +1,7 @@
-const { I, menOuterwearPage, menOuterwearPagePP17 } = inject();
+const { I, menOuterwearPagePP13, menOuterwearPagePP17, menOuterwearPage } = inject();
 
 Given('I open Men\'s Outerwear Page', () => {
-    menOuterwearPage.goToWebsite();
+    menOuterwearPagePP13.goToWebsite();
 });
 //PP-17
 When('User clicks on the product to view its details', () => {
@@ -9,5 +9,5 @@ When('User clicks on the product to view its details', () => {
 })
 Then('The product detail page should include product name, description, price, size, quantity, and buttons to add the product to the cart', () => {
     I.wait(10);
-    menOuterwearPage.verifyProductDetailPage();
+    menOuterwearPagePP17.verifyProductDetailPage();
 });
