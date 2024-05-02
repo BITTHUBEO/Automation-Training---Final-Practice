@@ -1,7 +1,7 @@
 const { I } = inject();
 const assert = require('assert');
 module.exports = {
-  //PP-98
+
   //PP-98
   fillAllValidInfo(){
     I.fillField('#accountEmail', 'thibichthu141@gmail.com');

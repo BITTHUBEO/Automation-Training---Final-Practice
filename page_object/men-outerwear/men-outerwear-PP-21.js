@@ -8,15 +8,6 @@ module.exports = {
     async getNumberOfProduct() {
         return await I.grabNumberOfVisibleElements('this.productList.xPath');
     },
-    //PP-21
-    /*selectQuantity() {
-      const quantity =5;
-      I.selectOption('#quantitySelect', quantity);
-    },
-    selectSize() {
-      const size = 'L';
-      I.selectOption('#sizeSelect', size);
-    },*/
     selectSize() {
         const size = ['XS', 'S', 'M', 'L', 'XL'];
         const randomSizeIndex = Math.floor(Math.random() * size.length);

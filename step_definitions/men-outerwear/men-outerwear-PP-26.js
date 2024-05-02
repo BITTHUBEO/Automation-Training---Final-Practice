@@ -1,4 +1,4 @@
-const { I, menOuterwearPagePP13, menOuterwearPagePP26, } = inject();
+const { I, menOuterwearPagePP13, menOuterwearPagePP26,menOuterwearPagePP25, menOuterwearPagePP21, menOuterwearPagePP17 } = inject();
 const assert = require('assert');
 
 
@@ -13,10 +13,9 @@ Given('I open Men\'s Outerwear Page', () => {
   let checkoutProductPrice
   let productQuantity
   When('The user clicks on the Checkout button in the notification popup', async () => {
-    menOuterwearPage.clickOnProduct();
-    menOuterwearPage.goToDetailProductPage();
+    menOuterwearPagePP17.clickOnProduct();
     I.wait(5);
-    menOuterwearPage.clickAddToCartButton();
+    menOuterwearPagePP21.clickAddToCartButton();
     productName = await I.grabTextFrom ('h1');
     productPriceText = await I.grabTextFrom('.price');
     productPrice = parseFloat(productPriceText.replace('$', ''));
@@ -25,9 +24,9 @@ Given('I open Men\'s Outerwear Page', () => {
   })
   Then('The product just added to cart is displayed on the order summary section of the checkout form', async () => {
     I.wait(5)
-    menOuterwearPage.verifyCheckoutPage ();
-    checkoutProductName = await I.grabTextFrom ('#checkoutForm > form > div.subsection.grid > section:nth-child(2) > div.row.order-summary-row > div.flex');
-    checkoutProductPriceText = await I.grabTextFrom('#checkoutForm > form > div.subsection.grid > section:nth-child(2) > div.row.order-summary-row > div:nth-child(2)')
+    menOuterwearPagePP25.verifyCheckoutPage ();
+    checkoutProductName = await I.grabTextFrom ('#checkoutForm > form > div.subsection.grid > section:nth-child(2) > div:nth-child(6) > div.flex');
+    checkoutProductPriceText = await I.grabTextFrom('#checkoutForm > form > div.subsection.grid > section:nth-child(2) > div:nth-child(6) > div:nth-child(2)')
     checkoutProductPrice = parseFloat(checkoutProductPriceText.replace('$', ''));
     assert.strictEqual(productName, checkoutProductName,'Product name does not match');
     assert.strictEqual(productPrice * productQuantity, checkoutProductPrice, 'Price does not match')

@@ -16,6 +16,7 @@ exports.config = {
     menOuterwearPagePP25: "./page_object/men-outerwear/men-outerwear-PP-25.js", 
     checkoutPage: "./page_object/checkout-page/checkout.js",
     checkoutForm: "./page_object/checkout-form/checkoutForm.js",
+    checkoutFormPP35: "./page_object/checkout-form/checkout-form-PP-35.js",
     checkoutFormPP80: "./page_object/checkout-form/checkout-form-PP-80.js",
     checkoutFormPP98: "./page_object/checkout-form/checkout-form-PP-98.js",
   },

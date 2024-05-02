@@ -10,8 +10,8 @@ When('Enter {string} special characters or numbers into the Cardholder Name fiel
 });
 Then('An error message Invalid Cardholder Name is displayed', async () => {
     checkoutForm.submitBox();
-    I.wait(5)
-    const displayValue = await I.grabCssPropertyFrom('shop-input > shop-md-decorator', 'display');
-    I.see('shop-input > shop-md-decorator', displayValue)
-   
+    I.wait(5);
+    //const displayValue = await I.grabCssPropertyFrom('shop-select > shop-md-decorator', 'display');
+    I.seeCssPropertiesOnElements('shop-select > shop-md-decorator::after', { 'display': "block"});
+
 });
