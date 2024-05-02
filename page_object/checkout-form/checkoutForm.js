@@ -44,8 +44,9 @@ module.exports = {
   shipZipErrorMessage () {
     I.seeElement('shop-md-decorator[error-message="Invalid Zip/Postal Code"] label');  
   },
-  cardholderNameErrorMessage () {
-    I.seeCssPropertiesOnElements('#checkoutForm > form > div.subsection.grid > section:nth-child(2) > div:nth-child(2) > shop-input > shop-md-decorator', {display: block});
+  async cardholderNameErrorMessage () {
+    const displayValue = await I.grabCssPropertyFrom('shop-input > shop-md-decorator', 'display');
+    I.see('shop-input > shop-md-decorator', displayValue)
   },
   cardNumberErrorMessage () {
     I.seeElement('shop-md-decorator[error-message="Invalid Card Number"] label')      
