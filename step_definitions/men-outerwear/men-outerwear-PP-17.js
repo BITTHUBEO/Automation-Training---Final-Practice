@@ -1,4 +1,6 @@
 const { I, menOuterwearPagePP13, menOuterwearPagePP17} = inject();
+const { devices } = require('playwright');
+
 
 Given('I open Men\'s Outerwear Page', () => {
     menOuterwearPagePP13.goToWebsite();

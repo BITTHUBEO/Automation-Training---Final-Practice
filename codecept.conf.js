@@ -1,11 +1,12 @@
+const { devices } = require('playwright');
 exports.config = {
   output: './output',
   helpers: {
     Playwright: {
       browser: 'chromium',
       url: 'http://localhost',
-      show: true
-    }
+      show: true,
+      emulate: devices['iPhone 14'],}
   },
   include: {
     I: './steps_file.js',
@@ -31,8 +32,13 @@ exports.config = {
   },
   plugins: {
     screenshotOnFail: {
-      enabled: true
+      enabled: true,
+
+    },
+    eachElement: {
+      registerGlobal: false 
     }
+
   },
   stepTimeout: 0,
   stepTimeoutOverride: [{

@@ -21,15 +21,13 @@ module.exports = {
         totalProductInCartString = totalProductInCart.toString();
         totalPriceInCart = await I.grabTextFrom('.subtotal');
     },
-    async getProductInfoCheckout() {
+    async getProductInfoCheckoutAndCompare() {
         totalProductInCheckout = await I.grabNumberOfVisibleElements('.flex');
         adjustedNumber = totalProductInCheckout - 1;
         totalProductInCheckoutString = adjustedNumber.toString();
         totalPriceInCheckout = await I.grabTextFrom('#checkoutForm > form > div.subsection.grid > section:nth-child(2) > div.row.total-row > div:nth-child(2)');
-        return totalProductInCheckoutString;
-    },
-    compareProductInfo() {
         assert.strictEqual(totalProductInCheckoutString, totalProductInCartString, 'Total products in checkout form does not match with cart');
         assert.strictEqual(totalPriceInCheckout, totalPriceInCart, 'Total price in checkout form does not match with cart');
-    }
+    },
+
 }
