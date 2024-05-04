@@ -16,8 +16,8 @@ Given('I open Men\'s Outerwear Page', () => {
     menOuterwearPagePP17.clickOnProduct();
     I.wait(5);
     menOuterwearPagePP21.clickAddToCartButton();
-    productName = await I.grabTextFrom("h1");
-    productPriceText = await I.grabTextFrom(".price");
+    productName = await I.grabTextFrom("#content > div > h1");
+    productPriceText = await I.grabTextFrom("#content > div > div.price");
     productPrice = parseFloat(productPriceText.replace("$", ""));
     productQuantity = 1;
     menOuterwearPagePP26.clickCheckoutOption();

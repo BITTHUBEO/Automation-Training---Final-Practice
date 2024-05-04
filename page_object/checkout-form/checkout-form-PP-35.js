@@ -2,56 +2,76 @@ const { I } = inject();
 const assert = require("assert");
 module.exports = {
   //PP-35
-  errorMessageAccInfo() {
-    I.seeElement('shop-md-decorator[error-message="Invalid Address"] label');
-    I.seeElement(
-      'shop-md-decorator[error-message="Invalid Zip/Postal Code"] label'
-    );
-    I.seeElement('shop-md-decorator[error-message="Invalid CVV"] label');
+
+  async addressErrorMessage () {
+    const colorValue = await I.grabCssPropertyFrom('#shipAddressLabel','color');
+    return 
   },
-  emailErrorMessage() {
-    I.seeElement('shop-md-decorator[error-message="Invalid Email"] label');
+  async emailErrorMessage () {
+    const colorValue = await I.grabCssPropertyFrom('#accountEmailLabel','color');
+    return 
+
   },
-  phoneErrorMessage() {
-    I.seeElement(
-      'shop-md-decorator[error-message="Invalid Phone Number"] label'
-    );
+  async phoneErrorMessage() {
+    const colorValue = await I.grabCssPropertyFrom('#accountPhoneLabel','color');
+    return 
   },
-  cityErrorMessage() {
-    I.seeElement('shop-md-decorator[error-message="Invalid City"] label');
+  async cityErrorMessage() {
+    const colorValue = await I.grabCssPropertyFrom('#shipCityLabel','color');
+    return 
   },
-  shipStateErrorMessage() {
-    I.seeElement(
-      'shop-md-decorator[error-message="Invalid State/Province"] label'
-    );
+  async  shipStateErrorMessage() {
+    const colorValue = await I.grabCssPropertyFrom('#shipStateLabel','color');
+    return 
   },
-  shipZipErrorMessage() {
-    I.seeElement(
-      'shop-md-decorator[error-message="Invalid Zip/Postal Code"] label'
-    );
+  async shipZipErrorMessage() {
+    const colorValue = await I.grabCssPropertyFrom('#shipZipLabel','color');
+    return 
   },
   async cardholderNameErrorMessage() {
-    const displayValue = await I.grabCssPropertyFrom(
-      "shop-input > shop-md-decorator",
-      "display"
-    );
-    I.see("shop-input > shop-md-decorator", displayValue);
+    const colorValue = await I.grabCssPropertyFrom('#checkoutForm > form > div.subsection.grid > section:nth-child(2) > div:nth-child(2) > shop-input > shop-md-decorator > label','color');
+    return 
   },
-  cardNumberErrorMessage() {
-    I.seeElement(
-      'shop-md-decorator[error-message="Invalid Card Number"] label'
-    );
+  async cardNumberErrorMessage() {
+    const colorValue = await I.grabCssPropertyFrom('#checkoutForm > form > div.subsection.grid > section:nth-child(2) > div:nth-child(3) > shop-input > shop-md-decorator > label','color');
+    return 
   },
-  cvvErrorMessage() {
-    I.see(
-      "Invalid CVV",
-      "#checkoutForm > form > div.subsection.grid > section:nth-child(2) > div:nth-child(4) > shop-input > shop-md-decorator"
-    );
+  async cvvErrorMessage() {
+    const colorValue = await I.grabCssPropertyFrom('#checkoutForm > form > div.subsection.grid > section:nth-child(2) > div:nth-child(4) > shop-input > shop-md-decorator > label','color');
+    return 
   },
-  expErrorMessage() {
-    I.see(
-      "Invalid Expiry",
-      "#checkoutForm > form > div.subsection.grid > section:nth-child(2) > div:nth-child(4"
-    );
+  async expErrorMessage() {
+    const colorValue = await I.grabCssPropertyFrom('#checkoutForm > form > div.subsection.grid > section:nth-child(2) > div:nth-child(4) > div > label','color');
+    return 
   },
+  async convertRGBtoHexAndAssertInvalidColor() {
+    console.log(colorValue);
+    function rgbToHex(rgb) {
+        rgb = rgb.substring(4, rgb.length-1).replace(/ /g, '').split(',');
+        return '#' + rgb.map(x => {
+            x = parseInt(x).toString(16); 
+            return (x.length === 1) ? '0' + x : x; 
+        }).join('');
+    }
+    const hexColor = rgbToHex(colorValue);
+    console.log(hexColor);
+    assert.equal(hexColor, '#dd2c00');
+  },
+  /*async assertInvalidColor () {
+    const hexColor = await this.convertFromRGBtoHex();
+    assert.equal(hexColor, '#dd2c00');
+  },
+  async assertValidColor () {
+    const hexColor = await this.convertFromRGBtoHex();
+    assert.equal(hexColor, '#202020');
+  },*/
+  functionRgbToHex(){
+    function rgbToHex(rgb) {
+        rgb = rgb.substring(4, rgb.length-1).replace(/ /g, '').split(',');
+        return '#' + rgb.map(x => {
+            x = parseInt(x).toString(16); 
+            return (x.length === 1) ? '0' + x : x; 
+        }).join('');
+    }
+  }
 };

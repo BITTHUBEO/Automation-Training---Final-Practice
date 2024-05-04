@@ -1,5 +1,5 @@
 const { I, checkoutForm } = inject();
-
+const assert = require('assert');
 
 Given('I access the checkout form Page', () => {
     checkoutForm.givenStep()

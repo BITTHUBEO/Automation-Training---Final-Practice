@@ -25,7 +25,6 @@ module.exports = {
   },
 
 
-
   submitBox(){
     I.click('#submitBox');
   }
