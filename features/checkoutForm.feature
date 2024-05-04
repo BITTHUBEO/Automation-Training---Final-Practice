@@ -34,7 +34,7 @@ Feature: Checkout Form Page
       | thu&gmail.com |
       | thugmail.com  |
 
-  @C100
+  @PP-100
   Scenario Outline: Verify Input Phone Number with Special Characters or Letters
     When Enter a '<phonenumber>' containing special characters into the phone number field.
     Then An error message Invalid Phone Number is displayed
