@@ -8,7 +8,7 @@ Feature: Checkout Form Page
     When  Click on the Place Order button
     Then The system displays error messages corresponding to each required field in the checkout form
 
-  @C80
+  @PP-80
   Scenario: No Input Provided after Selecting "Use Different Billing Address"
     When Select the option "Use Different Billing Address" in the checkbox
     And Click on Place order button

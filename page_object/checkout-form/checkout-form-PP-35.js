@@ -4,74 +4,72 @@ module.exports = {
   //PP-35
 
   async addressErrorMessage () {
-    const colorValue = await I.grabCssPropertyFrom('#shipAddressLabel','color');
-    return 
-  },
-  async emailErrorMessage () {
-    const colorValue = await I.grabCssPropertyFrom('#accountEmailLabel','color');
-    return 
-
-  },
-  async phoneErrorMessage() {
-    const colorValue = await I.grabCssPropertyFrom('#accountPhoneLabel','color');
-    return 
-  },
-  async cityErrorMessage() {
-    const colorValue = await I.grabCssPropertyFrom('#shipCityLabel','color');
-    return 
-  },
-  async  shipStateErrorMessage() {
-    const colorValue = await I.grabCssPropertyFrom('#shipStateLabel','color');
-    return 
-  },
-  async shipZipErrorMessage() {
-    const colorValue = await I.grabCssPropertyFrom('#shipZipLabel','color');
-    return 
-  },
-  async cardholderNameErrorMessage() {
-    const colorValue = await I.grabCssPropertyFrom('#checkoutForm > form > div.subsection.grid > section:nth-child(2) > div:nth-child(2) > shop-input > shop-md-decorator > label','color');
-    return 
-  },
-  async cardNumberErrorMessage() {
-    const colorValue = await I.grabCssPropertyFrom('#checkoutForm > form > div.subsection.grid > section:nth-child(2) > div:nth-child(3) > shop-input > shop-md-decorator > label','color');
-    return 
-  },
-  async cvvErrorMessage() {
-    const colorValue = await I.grabCssPropertyFrom('#checkoutForm > form > div.subsection.grid > section:nth-child(2) > div:nth-child(4) > shop-input > shop-md-decorator > label','color');
-    return 
-  },
-  async expErrorMessage() {
-    const colorValue = await I.grabCssPropertyFrom('#checkoutForm > form > div.subsection.grid > section:nth-child(2) > div:nth-child(4) > div > label','color');
-    return 
-  },
-  async convertRGBtoHexAndAssertInvalidColor() {
-    console.log(colorValue);
-    function rgbToHex(rgb) {
-        rgb = rgb.substring(4, rgb.length-1).replace(/ /g, '').split(',');
-        return '#' + rgb.map(x => {
-            x = parseInt(x).toString(16); 
-            return (x.length === 1) ? '0' + x : x; 
-        }).join('');
-    }
-    const hexColor = rgbToHex(colorValue);
+    const addColorValue = await I.grabCssPropertyFrom('#shipAddressLabel','color');
+    const hexColor = this.functionRgbToHex(addColorValue);
     console.log(hexColor);
     assert.equal(hexColor, '#dd2c00');
   },
-  /*async assertInvalidColor () {
-    const hexColor = await this.convertFromRGBtoHex();
+  async emailErrorMessage () {
+    const mailColorValue = await I.grabCssPropertyFrom('#accountEmailLabel','color');
+    const hexColor = this.functionRgbToHex(mailColorValue);
+    console.log(hexColor);
+    assert.equal(hexColor, '#dd2c00');
+
+  },
+  async phoneErrorMessage() {
+    const phoneColorValue = await I.grabCssPropertyFrom('#accountPhoneLabel','color');
+    const hexColor = this.functionRgbToHex(phoneColorValue);
+    console.log(hexColor);
     assert.equal(hexColor, '#dd2c00');
   },
-  async assertValidColor () {
-    const hexColor = await this.convertFromRGBtoHex();
-    assert.equal(hexColor, '#202020');
-  },*/
-  functionRgbToHex(){
-    function rgbToHex(rgb) {
-        rgb = rgb.substring(4, rgb.length-1).replace(/ /g, '').split(',');
-        return '#' + rgb.map(x => {
-            x = parseInt(x).toString(16); 
-            return (x.length === 1) ? '0' + x : x; 
-        }).join('');
-    }
-  }
+  async cityErrorMessage() {
+    const cityColorValue = await I.grabCssPropertyFrom('#shipCityLabel','color');
+    const hexColor = this.functionRgbToHex(cityColorValue);
+    console.log(hexColor);
+    assert.equal(hexColor, '#dd2c00');
+  },
+  async  shipStateErrorMessage() {
+    const stateColorValue = await I.grabCssPropertyFrom('#shipStateLabel','color');
+    const hexColor = this.functionRgbToHex(stateColorValue);
+    console.log(hexColor);
+    assert.equal(hexColor, '#dd2c00');
+  },
+  async shipZipErrorMessage() {
+    const zipColorValue = await I.grabCssPropertyFrom('#shipZipLabel','color');
+    const hexColor = this.functionRgbToHex(zipColorValue);
+    console.log(hexColor);
+    assert.equal(hexColor, '#dd2c00');
+  },
+  async cardholderNameErrorMessage() {
+    const cardnameColorValue = await I.grabCssPropertyFrom('#checkoutForm > form > div.subsection.grid > section:nth-child(2) > div:nth-child(2) > shop-input > shop-md-decorator > label','color');
+    const hexColor = this.functionRgbToHex(cardnameColorValue);
+    console.log(hexColor);
+    assert.equal(hexColor, '#dd2c00');
+  },
+  async cardNumberErrorMessage() {
+    const cardnumColorValue = await I.grabCssPropertyFrom('#checkoutForm > form > div.subsection.grid > section:nth-child(2) > div:nth-child(3) > shop-input > shop-md-decorator > label','color');
+    const hexColor = this.functionRgbToHex(cardnumColorValue);
+    console.log(hexColor);
+    assert.equal(hexColor, '#dd2c00');
+  },
+  async cvvErrorMessage() {
+    const cvvColorValue = await I.grabCssPropertyFrom('#checkoutForm > form > div.subsection.grid > section:nth-child(2) > div:nth-child(4) > shop-input > shop-md-decorator > label','color');
+    const hexColor = this.functionRgbToHex(cvvColorValue);
+    console.log(hexColor);
+    assert.equal(hexColor, '#dd2c00');
+  },
+  async expErrorMessage() {
+    const expColorValue = await I.grabCssPropertyFrom('#checkoutForm > form > div.subsection.grid > section:nth-child(2) > div:nth-child(4) > div > label','color');
+    const hexColor = this.functionRgbToHex(expColorValue);
+    console.log(hexColor);
+    assert.equal(hexColor, '#dd2c00');
+  },
+
+  functionRgbToHex(rgb) {
+    rgb = rgb.substring(4, rgb.length-1).replace(/ /g, '').split(',');
+    return '#' + rgb.map(x => {
+      x = parseInt(x).toString(16); 
+      return (x.length === 1) ? '0' + x : x; 
+    }).join('');
+  },
 };
