@@ -13,4 +13,5 @@ When('Click on the Place Order button.', () => {
 });
 Then('A confirmation message Thank you is displayed', () => {
     I.see('Thank you', 'h1');
+    I.amOnPage ('https://shop.polymer-project.org/checkout/success')
 });
