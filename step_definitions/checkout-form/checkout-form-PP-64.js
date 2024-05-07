@@ -15,14 +15,7 @@ Then('An error message Invalid Cardholder Name is displayed', async () => {
     I.wait(5);
     const colorValue = await I.grabCssPropertyFrom('#checkoutForm > form > div.subsection.grid > section:nth-child(2) > div:nth-child(2) > shop-input > shop-md-decorator > label','color');
     console.log(colorValue);
-    function rgbToHex(rgb) {
-        rgb = rgb.substring(4, rgb.length-1).replace(/ /g, '').split(',');
-        return '#' + rgb.map(x => {
-            x = parseInt(x).toString(16); 
-            return (x.length === 1) ? '0' + x : x; 
-        }).join('');
-    }
-    const hexColor = rgbToHex(colorValue);
+    const hexColor = checkoutFormPP35.functionRgbToHex(colorValue);
     console.log(hexColor);
     assert.equal(hexColor, '#dd2c00');
 });
