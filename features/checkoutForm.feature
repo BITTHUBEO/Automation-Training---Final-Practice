@@ -42,8 +42,8 @@ Feature: Checkout Form Page
       | phonenumber    |
       | 0466eewer15516 |
       | 554!@$%*%#     |
-      
- @PP-49
+
+  @PP-49
   Scenario: Verify Input of Combination of Alphanumeric Characters in Address Field
     When Enter an address combination of alphanumeric characters into the field
     Then There are no error messages Invalid Phone Number is displayed.

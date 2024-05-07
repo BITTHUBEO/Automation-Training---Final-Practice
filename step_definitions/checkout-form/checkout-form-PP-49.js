@@ -21,7 +21,7 @@ Then(
       "#shipAddressLabel",
       "color"
     );
-    console.log(colorValue);
+    console.log(addressColorValue);
     const hexColor = checkoutFormPP35.functionRgbToHex(addressColorValue);
     console.log(hexColor);
     assert.equal(hexColor, "#202020");

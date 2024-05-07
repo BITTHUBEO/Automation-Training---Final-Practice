@@ -10,6 +10,6 @@ Feature: Checkout Page
     Then Verify the product information displayed in the checkout form accurately reflects the modifications made by the user in the cart.
 
   @PP-34
-    Scenario: Verify the website display clear notification if cart is empty
+  Scenario: Verify the website display clear notification if cart is empty
     When User views their cart by clicking the cart icon
     Then Then A clear notification about the empty cart should be displayed
