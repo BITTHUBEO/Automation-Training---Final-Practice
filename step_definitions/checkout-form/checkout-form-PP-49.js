@@ -13,7 +13,7 @@ When(
 );
 
 Then(
-  "There are no error message Invalid Phone Number is displayed.",
+  "There are no error messages Invalid Phone Number is displayed.",
   async () => {
     checkoutForm.submitBox();
     I.wait(5);
@@ -21,7 +21,7 @@ Then(
       "#shipAddressLabel",
       "color"
     );
-    console.log(colorValue);
+    console.log(addressColorValue);
     const hexColor = checkoutFormPP35.functionRgbToHex(addressColorValue);
     console.log(hexColor);
     assert.equal(hexColor, "#202020");

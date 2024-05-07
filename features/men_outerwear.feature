@@ -32,9 +32,18 @@ Feature: Men's Outerwear Page
   Scenario: Verify proceed to direct checkout after adding a product from the Men's Outerwear category
     When The user clicks on the Checkout button in the notification popup
     Then The product just added to cart is displayed on the order summary section of the checkout form
+<<<<<<< HEAD
 
 
   @PP-116
   Scenario: Verify the closing of the dialog box on the product detail view page of the Men's Outerwear category after successfully adding the product to the cart
     When User click X button on the top-right corner of the box
     Then The dialog box is closed
+=======
+
+
+  @PP-111
+  Scenario: Verify Display Product Information in Checkout Form for Direct Checkout
+    When Verify the product name before adding product to cart
+    Then The checkout form displays only the information about the product being purchased.
+>>>>>>> fa7486e0dbfb1f2d1cae7110d1033afd4cb1db16
