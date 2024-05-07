@@ -108,3 +108,7 @@ Feature: Checkout Form Page
   Scenario: Verify Selection of Expired Expiry Date
     When Select an expiry date that has already passed from the dropdown.
     Then An error message Invalid Expiry is displayed
+  @PP-117
+  Scenario: Verify Finish button functionality after successful order placement
+    When User click finish button on page
+    Then The user has been redirected back to the website home page
