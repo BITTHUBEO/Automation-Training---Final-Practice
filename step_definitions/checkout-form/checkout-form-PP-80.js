@@ -22,5 +22,4 @@ Then(
     checkoutFormPP80.billState();
     checkoutFormPP80.billZip();
   }
-
 );
