@@ -6,8 +6,8 @@ exports.config = {
       browser: 'chromium',
       url: 'http://localhost',
       show: true,
-      //emulate: devices['iPhone 14'],}
-  }},
+      emulate: devices['iPhone 14'],}
+  },
   include: {
     I: './steps_file.js',
     menOuterwearPagePP26: "./page_object/men-outerwear/men-outerwear-PP-26.js", 
