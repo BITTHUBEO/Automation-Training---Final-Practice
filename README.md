@@ -1,4 +1,4 @@
-# Graduation Project
+# Polymer Commerce Testing Project
 
 ### OVERVIEW
 * This document will provide a detailed information about training plan for an automation engineer.
