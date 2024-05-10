@@ -6,14 +6,12 @@ Feature: Men's Outerwear Page
   @C13
   Scenario: Verify the product list page of Men's Outerwear Category
     When User verifies the information for each product
-    Then The total number of products on the page is displayed
-    And All products displayed on the page include image, product names and prices
+    Then The total number of products on the page is displayed and All products displayed on the page include image, product names and prices
 
   @C17
   Scenario: Verify the product detail page in the Men's Outerwear category
     When User clicks on the product to view its details
-    Then The total number of products on the page is displayed
-    And The product detail page should include product name, description, price, size, quantity, and buttons to add the product to the cart
+    Then The total number of products on the page is displayed and The product detail page should include product name, description, price, size, quantity, and buttons to add the product to the cart
 
   @C21
   Scenario: Verify adding products to the cart in Men's Outerwear category

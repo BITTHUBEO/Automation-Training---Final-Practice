@@ -6,7 +6,8 @@ exports.config = {
       browser: 'chromium',
       url: 'http://localhost',
       show: true,
-      emulate: devices['iPhone 14'],}
+      //emulate: devices['iPhone 14'],
+    }
   },
   include: {
     I: './steps_file.js',
@@ -62,5 +63,4 @@ exports.config = {
       // testRunTags: ['smoke-tests']
     }
   }*/
-  
 }
