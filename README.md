@@ -1,4 +1,4 @@
-# Graduation Project
+# Polymer Commerce Testing Project
 
 ### OVERVIEW
 * This document will provide a detailed information about training plan for an automation engineer.
@@ -21,7 +21,25 @@
 * Step 01: Clone repository
 
 ```
-git clone <https://github.com/BITTHUBEO/Polymer-Commerce-Testing-Project>
+git clone <https://github.com/thuthi1401/polymer-commerce-testing-project.git>
+```
+
+* Step 02: Npm install
+
+```
+npm install
+```
+
+* Step 03: Setup playwright
+
+```
+npx playwright install
+```
+
+* Step 04: Run the test
+
+```
+npx codeceptjs run --grep C17
 ```
 
 
