@@ -20,5 +20,6 @@ Then(
     checkoutFormPP35.cardholderNameErrorMessage();
     checkoutFormPP35.cardNumberErrorMessage();
     checkoutFormPP35.addressErrorMessage();
+    checkoutFormPP35.cvvErrorMessage();
   }
 );
